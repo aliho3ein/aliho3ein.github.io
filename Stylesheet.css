@@ -20,7 +20,7 @@ body {
   float: left;
 }
 
-#Header {
+Header {
   height: 300px;
   width: 100%;
   background: url(Image/bc2.jpg);
@@ -40,14 +40,14 @@ body {
   box-shadow: 0px 0px 15px white;
 }
 
-#Header h1 {
+Header h1 {
   color: white;
   font-size: 3.8em;
   margin: 50px;
   /*
   margin: 50px 100px 30px 100px;*/
 }
-#Header h2 {
+Header h2 {
   color: white;
   font-size: 1em;
 }
@@ -102,7 +102,7 @@ body {
 #Searchbox:focus {
   flex: 3;
 }
-#Content {
+main {
   height: auto;
   width: 100%;
   background-color: white;
@@ -163,7 +163,7 @@ body {
   float: left;*/
 }
 
-#Footer {
+Footer {
   height: 350px;
   width: 100%;
   background: url(Image/city01.png) white;
@@ -171,13 +171,13 @@ body {
   float: left;
   text-align: center;
 }
-#Footer h6 {
+Footer h6 {
   color: white;
   margin-top: 300px;
   cursor: po;
   transition: 0.5s;
 }
-#Footer h6:hover {
+Footer h6:hover {
   color: orange;
 }
 .cont_all h4 {
@@ -207,10 +207,10 @@ body {
 }
 
 @media (max-width: 1350px) {
-  #Header h1 {
+  Header h1 {
     color: red;
   }
-  #Header h2 {
+  Header h2 {
     display: none;
   }
 }
