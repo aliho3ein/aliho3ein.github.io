@@ -1,0 +1,188 @@
+#skillBase {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: grid;
+  place-content: center;
+  user-select: none;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    #6d8556,
+    #88a366,
+    #a5c276,
+    #c5e186,
+    #a5c276,
+    #88a366,
+    #6d8556,
+    transparent
+  );
+
+  @include responsive(950) {
+    .baseSkill {
+      display: block !important;
+    }
+    ul {
+      display: none !important;
+    }
+  }
+
+  ul {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    li {
+      width: 70%;
+      font-size: 3rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+
+      &:before {
+        font: var(--fa-font-brands);
+        font-size: 1.7rem;
+        padding-right: 30px;
+      }
+
+      &:nth-child(1)::before {
+        content: "\f13b";
+      }
+      &:nth-child(2)::before {
+        content: "\f38b";
+      }
+      &:nth-child(3)::before {
+        content: "\f41e";
+      }
+      &:nth-child(4)::before {
+        content: "\f836";
+      }
+      &:nth-child(5)::before {
+        content: "\f3b8";
+      }
+      &:nth-child(6)::before {
+        content: "\f211";
+      }
+      &:nth-child(7)::before {
+        content: "\f41b";
+      }
+      &:nth-child(8)::before {
+        content: "\f612";
+      }
+    }
+  }
+
+  > h2 {
+    font: 3rem $fantasy-font;
+    color: $secondary-color;
+    text-align: center;
+    user-select: none;
+  }
+
+  .baseSkill {
+    height: 300px;
+    width: 300px;
+    margin: 100px auto;
+    perspective: 800px;
+    display: none;
+
+    .cardSkill {
+      height: 400px;
+      width: 300px;
+      transform-style: preserve-3d;
+      position: relative;
+      transform: rotateY(10deg);
+
+      > div {
+        height: 400px;
+        width: 0px;
+        overflow: hidden;
+        position: absolute;
+        backdrop-filter: blur(20px);
+        border-radius: 10px;
+        box-shadow: 0 0 5px #999;
+        display: grid;
+        place-content: center;
+        font-size: 2.5rem;
+        color: #fff;
+        text-shadow: 0 0 5px #fff;
+        text-align: center;
+      }
+
+      .side1 {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 227, 16, 0.5),
+          rgba(85, 57, 3, 0.9)
+        );
+        animation: cardRotation 12s linear 0s infinite;
+      }
+      .side2 {
+        background: linear-gradient(
+          135deg,
+          rgba(45, 185, 250, 0.5),
+          rgba(5, 5, 81, 0.9)
+        );
+        animation: cardRotation 12s linear 2s infinite;
+      }
+      .side3 {
+        background: linear-gradient(
+          135deg,
+          rgba(233, 120, 120, 0.5),
+          rgba(95, 4, 4, 0.9)
+        );
+        animation: cardRotation 12s linear 4s infinite;
+      }
+      .side4 {
+        background: linear-gradient(
+          135deg,
+          rgba(47, 255, 47, 0.5),
+          rgba(4, 76, 4, 0.9)
+        );
+        animation: cardRotation 12s linear 6s infinite;
+      }
+      .side5 {
+        background: linear-gradient(
+          135deg,
+          rgba(246, 149, 70, 0.5),
+          rgba(232, 67, 7, 0.9)
+        );
+        animation: cardRotation 12s linear 8s infinite;
+      }
+      .side6 {
+        background: linear-gradient(
+          135deg,
+          rgba(208, 70, 246, 0.5),
+          rgba(50, 2, 65, 0.9)
+        );
+        animation: cardRotation 12s linear 10s infinite;
+      }
+    }
+  }
+}
+
+@keyframes cardRotation {
+  0% {
+    transform: translateX(-500px) translateZ(-500px);
+    width: 300px;
+    filter: blur(2px);
+  }
+  25% {
+    transform: translateX(0px) translateZ(-1500px);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateX(500px) translateZ(-500px);
+  }
+  75% {
+    transform: translateX(0px) translateZ(100px);
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(-500px) translateZ(-500px);
+    width: 300px;
+    filter: blur(2px);
+  }
+}

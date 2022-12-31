@@ -1,0 +1,41 @@
+@import "./variable";
+@import "./navbar";
+@import "./header";
+@import "./about";
+@import "./instagram";
+@import "./skill";
+@import "./project";
+@import "./footer";
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: $primary-color;
+  overflow-x: hidden;
+}
+
+main {
+  padding-block: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+// Scroll
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $secondary-color;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,109 @@
+#aboutBase {
+  padding-block: 50px;
+  width: 100%;
+  margin-top: 100px;
+  position: relative;
+  box-shadow: 0 0 15px #ccc;
+  border-radius: 10px;
+  background-image: radial-gradient(
+    circle,
+    #a9c666,
+    #91ae5f,
+    #7b9657,
+    #667f4f,
+    #546846
+  );
+
+  h2 {
+    height: 100px;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    font: 3rem $fantasy-font;
+    color: $secondary-color;
+    margin: 100px auto 0;
+    user-select: none;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.5rem;
+    padding-inline: 3%;
+    color: #fff;
+  }
+}
+
+.picBase {
+  height: 350px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -200px;
+  margin-inline: auto;
+  perspective: 500px;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  flex-flow: wrap;
+
+  .card {
+    box-shadow: 0 0 15px #fff;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 500ms;
+    overflow: hidden;
+    background: linear-gradient(to top right, rgb(0 0 0 /0.5), transparent),
+      center / cover url(../image/profile.png);
+  }
+}
+
+@include responsive(1000) {
+  #aboutBase {
+    width: 60%;
+    min-width: 800px;
+    h2 {
+      margin: 0;
+      width: 60%;
+    }
+    p {
+      text-align: start;
+    }
+  }
+
+  .picBase {
+    margin-top: -150px;
+    margin-left: -150px;
+    top: 0;
+    float: left;
+    position: relative;
+  }
+}
+
+// 3D Effect on Image
+div[class*="part"] {
+  z-index: 3;
+}
+
+$xLine: 10;
+$yLine: -10;
+
+$x: $xLine;
+$y: $yLine;
+
+@for $i from 1 to 26 {
+  .part#{$i}:hover ~ .card {
+    transform: rotateX(#{$x}deg) rotateY(#{$y}deg);
+  }
+
+  $y: $y + calc($yLine / -2);
+
+  @if ($y > calc($yLine * -1)) {
+    $y: $yLine;
+  }
+  @if ($i%5 == 0) {
+    $x: $x - calc($xLine / 2);
+  }
+}

@@ -1,0 +1,232 @@
+@mixin ball {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff;
+  backdrop-filter: blur(10px);
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  display: none;
+  place-content: center;
+
+  span {
+    color: $secondary-color;
+    font: 2rem $fantasy-font;
+    background: linear-gradient(
+      to left,
+      transparent,
+      rgb(0 0 0 /0.8),
+      transparent
+    );
+    padding-inline: 20px;
+  }
+}
+
+#skillBase {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-content: center;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    #6d8556,
+    #88a366,
+    #a5c276,
+    #c5e186,
+    #a5c276,
+    #88a366,
+    #6d8556,
+    transparent
+  );
+
+  @include responsive(950) {
+    div[class*="workBall"] {
+      display: grid !important;
+    }
+    ul {
+      display: none !important;
+    }
+  }
+
+  ul {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li {
+      width: 70%;
+      font-size: 3rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      user-select: none;
+
+      &:before {
+        font: var(--fa-font-brands);
+        font-size: 1.7rem;
+        padding-right: 30px;
+      }
+
+      &:nth-child(1)::before {
+        content: "\f13b";
+      }
+      &:nth-child(2)::before {
+        content: "\f38b";
+      }
+      &:nth-child(3)::before {
+        content: "\f41e";
+      }
+      &:nth-child(4)::before {
+        content: "\f836";
+      }
+      &:nth-child(5)::before {
+        content: "\f3b8";
+      }
+      &:nth-child(6)::before {
+        content: "\f211";
+      }
+      &:nth-child(7)::before {
+        content: "\f41b";
+      }
+      &:nth-child(8)::before {
+        content: "\f612";
+      }
+    }
+  }
+
+  > h2 {
+    font: 3rem $fantasy-font;
+    color: $secondary-color;
+  }
+
+  .workBall-1 {
+    @include ball;
+    height: 200px;
+    background-image: url(https://pixelmechanics.com.sg/wp-content/uploads/2019/06/html5-logo-for-web-development.png);
+    animation: child1 15s linear infinite reverse;
+    z-index: 2;
+  }
+  .workBall-2 {
+    @include ball;
+    height: 250px;
+    background-image: url(https://pixelmechanics.com.sg/wp-content/uploads/2019/04/css.jpg);
+    animation: child3 25s linear infinite;
+    z-index: 3;
+  }
+  .workBall-3 {
+    @include ball;
+    height: 300px;
+    background-image: url(https://programacion.net/files/article/20161014011025_javascript.png);
+    animation: child3 20s linear infinite reverse;
+  }
+  .workBall-4 {
+    @include ball;
+    height: 300px;
+    background-image: url(https://reactnative.dev/img/logo-og.png);
+    animation: child2 45s linear infinite;
+  }
+  .workBall-5 {
+    @include ball;
+    height: 250px;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF81GfHgCqjgn_uOxRDLyxpMcMMqxld6afpnrjZARUqK_NMTD8KLOdIknyYrKLhUnMLwY&usqp=CAU);
+    animation: child1 45s linear infinite;
+  }
+  .workBall-6 {
+    @include ball;
+    height: 200px;
+    background-image: url(https://img.vpnclub.cc/content/zh/2019/08/jQuery-CDN-Replace-JavaScript-Code-Logo.jpg);
+    animation: child2 20s linear infinite reverse;
+  }
+}
+
+@keyframes child1 {
+  0% {
+    top: 40vh;
+    left: 0;
+    transform: rotate(0);
+  }
+  25% {
+    top: calc(100vh - 250px);
+    left: 40vw;
+  }
+  50% {
+    top: 40vh;
+    left: calc(100vw - 250px);
+    transform: rotate(-90deg);
+  }
+  75% {
+    top: 0;
+    left: 40vw;
+  }
+  100% {
+    top: 40vh;
+    left: 0;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes child2 {
+  0% {
+    top: 0;
+    left: 80vw;
+    transform: rotate(0deg);
+  }
+  25% {
+    top: calc(40vh - 300px);
+    left: 0vw;
+  }
+  50% {
+    top: 20vh;
+    left: 0;
+    transform: rotate(20deg);
+  }
+  75% {
+    top: calc(100vh - 300px);
+    left: calc(100vw - 300px);
+  }
+  100% {
+    top: 0;
+    left: 80vw;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes child3 {
+  0% {
+    top: 0;
+    left: 20vw;
+    transform: rotate(0deg);
+  }
+  25% {
+    top: calc(60vh - 300px);
+    left: 30vw;
+  }
+  50% {
+    top: calc(100vh - 300px);
+    left: calc(100vw - 300px);
+    transform: rotate(40deg);
+  }
+  75% {
+    top: 20vh;
+    left: 0;
+  }
+  100% {
+    top: 0;
+    left: 20vw;
+    transform: rotate(0deg);
+  }
+}
+
+/* Html */
+/* <div class="workBall-1"><span>HTML</span></div> 
+<div class="workBall-2"><span>CSS</span></div>
+<div class="workBall-3"><span>Javascript</span></div>
+<div class="workBall-4"><span>React.js</span></div>
+<div class="workBall-5"><span>Next.js</span></div>
+<div class="workBall-6"><span>JQuery</span></div>*/

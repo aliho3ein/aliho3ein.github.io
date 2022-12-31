@@ -1,0 +1,1000 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap");
+/* Colors */
+/* MediaQuery */
+/* CSS Normalize */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Changa", sans-serif;
+}
+
+header {
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+header .headText {
+  position: relative;
+  color: #e5a455;
+  overflow: hidden;
+  transform: rotate(90deg);
+}
+@media screen and (min-width: 650px) {
+  header .headText {
+    transform: rotate(0deg);
+  }
+  header .headText h1 {
+    font-size: 2rem !important;
+  }
+}
+@media screen and (min-width: 1150px) {
+  header .headText h1 {
+    font-size: 4rem !important;
+  }
+}
+header .headText > h1 {
+  padding-inline: 20px;
+  font-weight: 400;
+  font: 1.1rem "Kdam Thmor Pro", sans-serif;
+  letter-spacing: 2px;
+  width: 150%;
+}
+header .headText .heLine {
+  height: 100%;
+  width: 100%;
+  font-size: 2.2rem;
+  position: absolute;
+  top: 0;
+  left: 150px;
+  background-color: #546846;
+  display: flex;
+  align-items: center;
+  -webkit-animation: textShow 10s linear infinite;
+          animation: textShow 10s linear infinite;
+}
+header .headText .heLine span {
+  margin-left: -6px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  -webkit-animation: lineBlink 600ms linear infinite;
+          animation: lineBlink 600ms linear infinite;
+  color: #ccc;
+}
+header .fa-chevron-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-inline: auto;
+  text-align: center;
+  font-size: 4rem;
+  color: #ccc;
+  animation: jumpBtn 3s ease infinite reverse;
+}
+
+/* Text Effect */
+@-webkit-keyframes lineBlink {
+  0% {
+    font-size: 5rem;
+  }
+  50% {
+    font-size: 3rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+@keyframes lineBlink {
+  0% {
+    font-size: 5rem;
+  }
+  50% {
+    font-size: 3rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+@-webkit-keyframes textShow {
+  0% {
+    left: 0;
+  }
+  40% {
+    left: 100%;
+  }
+  60% {
+    left: 100%;
+  }
+  90% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+@keyframes textShow {
+  0% {
+    left: 0;
+  }
+  40% {
+    left: 100%;
+  }
+  60% {
+    left: 100%;
+  }
+  90% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+/* Down Btn sign */
+@-webkit-keyframes jumpBtn {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  20% {
+    transform: translateY(5px);
+  }
+  30% {
+    transform: translateY(-2px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+}
+@keyframes jumpBtn {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  20% {
+    transform: translateY(5px);
+  }
+  30% {
+    transform: translateY(-2px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+}
+#aboutBase {
+  padding-block: 50px;
+  width: 100%;
+  margin-top: 100px;
+  position: relative;
+  box-shadow: 0 0 15px #ccc;
+  border-radius: 10px;
+  background-image: radial-gradient(circle, #a9c666, #91ae5f, #7b9657, #667f4f, #546846);
+}
+#aboutBase h2 {
+  height: 100px;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  font: 3rem "Kdam Thmor Pro", sans-serif;
+  color: #e5a455;
+  margin: 100px auto 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#aboutBase p {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-inline: 3%;
+  color: #fff;
+}
+
+.picBase {
+  height: 350px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -200px;
+  margin-inline: auto;
+  perspective: 500px;
+  display: grid;
+  grid-template: repeat(5, 1fr)/repeat(5, 1fr);
+  flex-flow: wrap;
+}
+.picBase .card {
+  box-shadow: 0 0 15px #fff;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 500ms;
+  overflow: hidden;
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent), center/cover url(../image/profile.png);
+}
+
+@media screen and (min-width: 1000px) {
+  #aboutBase {
+    width: 60%;
+    min-width: 800px;
+  }
+  #aboutBase h2 {
+    margin: 0;
+    width: 60%;
+  }
+  #aboutBase p {
+    text-align: start;
+  }
+  .picBase {
+    margin-top: -150px;
+    margin-left: -150px;
+    top: 0;
+    float: left;
+    position: relative;
+  }
+}
+div[class*=part] {
+  z-index: 3;
+}
+
+.part1:hover ~ .card {
+  transform: rotateX(10deg) rotateY(-10deg);
+}
+
+.part2:hover ~ .card {
+  transform: rotateX(10deg) rotateY(-5deg);
+}
+
+.part3:hover ~ .card {
+  transform: rotateX(10deg) rotateY(0deg);
+}
+
+.part4:hover ~ .card {
+  transform: rotateX(10deg) rotateY(5deg);
+}
+
+.part5:hover ~ .card {
+  transform: rotateX(10deg) rotateY(10deg);
+}
+
+.part6:hover ~ .card {
+  transform: rotateX(5deg) rotateY(-10deg);
+}
+
+.part7:hover ~ .card {
+  transform: rotateX(5deg) rotateY(-5deg);
+}
+
+.part8:hover ~ .card {
+  transform: rotateX(5deg) rotateY(0deg);
+}
+
+.part9:hover ~ .card {
+  transform: rotateX(5deg) rotateY(5deg);
+}
+
+.part10:hover ~ .card {
+  transform: rotateX(5deg) rotateY(10deg);
+}
+
+.part11:hover ~ .card {
+  transform: rotateX(0deg) rotateY(-10deg);
+}
+
+.part12:hover ~ .card {
+  transform: rotateX(0deg) rotateY(-5deg);
+}
+
+.part13:hover ~ .card {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.part14:hover ~ .card {
+  transform: rotateX(0deg) rotateY(5deg);
+}
+
+.part15:hover ~ .card {
+  transform: rotateX(0deg) rotateY(10deg);
+}
+
+.part16:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(-10deg);
+}
+
+.part17:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(-5deg);
+}
+
+.part18:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(0deg);
+}
+
+.part19:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(5deg);
+}
+
+.part20:hover ~ .card {
+  transform: rotateX(-5deg) rotateY(10deg);
+}
+
+.part21:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(-10deg);
+}
+
+.part22:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(-5deg);
+}
+
+.part23:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(0deg);
+}
+
+.part24:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(5deg);
+}
+
+.part25:hover ~ .card {
+  transform: rotateX(-10deg) rotateY(10deg);
+}
+
+#mobileBase {
+  height: 600px;
+  width: 100vw;
+  background: #eee;
+  margin-block: 300px;
+  -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 81%);
+          clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 81%);
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 5px solid #e5a455;
+}
+#mobileBase ::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+#mobileBase .mobile {
+  height: 500px;
+  width: 300px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  top: 50px;
+  background: center/cover url(https://videotron.tmtx.ca/data/images/product/noncanvasimage/apple_iphone_7_plus_iphone_7_plus_product_2.png) no-repeat;
+}
+#mobileBase .mobile .screen {
+  height: 350px;
+  width: 198px;
+  position: absolute;
+  top: 85px;
+  left: 51px;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0 0 5px #fff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#mobileBase .mobile .screen .inImage {
+  height: 50px;
+  aspect-ratio: 1;
+  border-radius: 1;
+  border: 2px solid #aaa;
+  margin: 10px 8px 0px;
+  border-radius: 50%;
+  float: left;
+  background: linear-gradient(to top right, rgba(0, 0, 0, 0.5), transparent), center/cover url(./../image/profile.png);
+}
+#mobileBase .mobile .screen .inHeader {
+  float: right;
+  height: 40px;
+  width: 110px;
+  margin-top: 20px;
+  margin-right: 13px;
+  display: grid;
+  grid-template: repeat(2, 10px)/repeat(3, 1fr);
+  font-size: 0.9rem;
+  text-align: center;
+  gap: 8px;
+}
+#mobileBase .mobile .screen .inHeader span:nth-child(1), #mobileBase .mobile .screen .inHeader span:nth-child(2), #mobileBase .mobile .screen .inHeader span:nth-child(3) {
+  font-weight: 600;
+}
+#mobileBase .mobile .screen .inHeader span:nth-child(4), #mobileBase .mobile .screen .inHeader span:nth-child(5), #mobileBase .mobile .screen .inHeader span:nth-child(6) {
+  font-size: 0.6rem;
+}
+#mobileBase .mobile .screen > h2 {
+  font-size: 0.6rem;
+  width: 100%;
+  float: left;
+  padding: 0px 10px 2px;
+  text-align: start;
+}
+#mobileBase .mobile .screen .inContent {
+  height: 210px;
+  width: 100%;
+  float: right;
+  border-top: 1px solid #ccc;
+  display: grid;
+  grid-template: repeat(5, 30%)/repeat(3, 33%);
+  gap: 1px;
+}
+#mobileBase .mobile .screen .inContentImg {
+  border: 1px solid #ccc;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 200ms;
+  filter: grayscale(70%);
+}
+#mobileBase .mobile .screen .inContentImg:hover {
+  transform: scale(1.1);
+  filter: grayscale(0);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(1) {
+  background-image: url(https://as2.ftcdn.net/v2/jpg/02/73/83/97/1000_F_273839757_zPsxluEf1qq0jDfQfRPy8bnp0Up7K0n9.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(2) {
+  background-image: url(https://haendlerbund-ohn.imgix.net/images/2022/04/Raus_Cabin_TheOrchard_Noel_Richter_bb.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(3) {
+  background-image: url(https://assets.glamour.de/photos/62ced0807d5163addd2f89cb/master/pass/Grapefruit-Drink-GettyImages-1168979545.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(4) {
+  background-image: url(https://www.newniq.com/wp-content/uploads/2018/01/nachhaltig-leben-natur-tiny-houses.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(5) {
+  background-image: url(https://image.foodboom.de/5gske5gmnnea36hbe3l000cw56dg/senf-kartoffel-roesti-burger?auto=format,compress&crop=entropy&fit=crop&w=264&h=330);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(6) {
+  background-image: url(https://www.boldsky.com/img/2020/01/malebestfriend-1579932415.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(7) {
+  background-image: url(https://cdn.prod.www.manager-magazin.de/images/921e8ad8-0001-0004-0000-000001233352_w948_r1.778_fpx51.3_fpy44.94.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(8) {
+  background-image: url(https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/vimdb/250392.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(9) {
+  background-image: url(https://www.largus.fr/images/images/first.jpg?width=296&quality=80);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(10) {
+  background-image: url(https://i.computer-bild.de/imgs/1/4/6/3/5/1/2/9/kindle_test_aufmacher-43ed689775fe8e66.jpg?impolicy=full_content);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(11) {
+  background-image: url(https://www.dreamsquote.com/wp-content/uploads/2021/01/Cute-Best-Friend-Quotes-Friendship-Thoughts.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(12) {
+  background-image: url(https://npr.brightspotcdn.com/dims4/default/4852659/2147483647/strip/true/crop/4032x3024+0+0/resize/880x660!/quality/90/?url=https%3A%2F%2Fnpr.brightspotcdn.com%2F22%2F61%2F8febfa3f491c89da01c5231ef7ce%2Fpxl-20220502-204111193.PORTRAIT.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(13) {
+  background-image: url(https://skintdad.co.uk/wp-content/uploads/2019/04/genuine-work-from-home-jobs-uk.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(14) {
+  background-image: url(https://www.stuttgarter-nachrichten.de/media.media.4848669c-e960-45c0-bb0d-fec6e7e2981d.normalized.jpg);
+}
+#mobileBase .mobile .screen .inContentImg:nth-child(15) {
+  background-image: url(data:image/jpeg;base64,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);
+}
+@media screen and (min-width: 850px) {
+  #mobileBase .mobile {
+    right: 200px;
+    left: auto;
+    margin-inline: 0;
+  }
+}
+#mobileBase .text {
+  width: 40%;
+  margin: 200px 20px 0;
+  display: none;
+}
+#mobileBase .text h2 {
+  font: 3rem "Kdam Thmor Pro", sans-serif;
+  color: #e5a455;
+}
+@media screen and (min-width: 1100px) {
+  #mobileBase .text {
+    margin: 200px;
+  }
+}
+@media screen and (min-width: 850px) {
+  #mobileBase .text {
+    display: block;
+  }
+}
+
+#skillBase {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: grid;
+  place-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: linear-gradient(to bottom, transparent, #6d8556, #88a366, #a5c276, #c5e186, #a5c276, #88a366, #6d8556, transparent);
+}
+@media screen and (min-width: 950px) {
+  #skillBase .baseSkill {
+    display: block !important;
+  }
+  #skillBase ul {
+    display: none !important;
+  }
+}
+#skillBase ul {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+#skillBase ul li {
+  width: 70%;
+  font-size: 3rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+#skillBase ul li:before {
+  font: var(--fa-font-brands);
+  font-size: 1.7rem;
+  padding-right: 30px;
+}
+#skillBase ul li:nth-child(1)::before {
+  content: "\f13b";
+}
+#skillBase ul li:nth-child(2)::before {
+  content: "\f38b";
+}
+#skillBase ul li:nth-child(3)::before {
+  content: "\f41e";
+}
+#skillBase ul li:nth-child(4)::before {
+  content: "\f836";
+}
+#skillBase ul li:nth-child(5)::before {
+  content: "\f3b8";
+}
+#skillBase ul li:nth-child(6)::before {
+  content: "\f211";
+}
+#skillBase ul li:nth-child(7)::before {
+  content: "\f41b";
+}
+#skillBase ul li:nth-child(8)::before {
+  content: "\f612";
+}
+#skillBase > h2 {
+  font: 3rem "Kdam Thmor Pro", sans-serif;
+  color: #e5a455;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#skillBase .baseSkill {
+  height: 300px;
+  width: 300px;
+  margin: 100px auto;
+  perspective: 800px;
+  display: none;
+}
+#skillBase .baseSkill .cardSkill {
+  height: 400px;
+  width: 300px;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateY(10deg);
+}
+#skillBase .baseSkill .cardSkill > div {
+  height: 400px;
+  width: 0px;
+  overflow: hidden;
+  position: absolute;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 10px;
+  box-shadow: 0 0 5px #999;
+  display: grid;
+  place-content: center;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 5px #fff;
+  text-align: center;
+}
+#skillBase .baseSkill .cardSkill .side1 {
+  background: linear-gradient(135deg, rgba(255, 227, 16, 0.5), rgba(85, 57, 3, 0.9));
+  -webkit-animation: cardRotation 12s linear 0s infinite;
+          animation: cardRotation 12s linear 0s infinite;
+}
+#skillBase .baseSkill .cardSkill .side2 {
+  background: linear-gradient(135deg, rgba(45, 185, 250, 0.5), rgba(5, 5, 81, 0.9));
+  -webkit-animation: cardRotation 12s linear 2s infinite;
+          animation: cardRotation 12s linear 2s infinite;
+}
+#skillBase .baseSkill .cardSkill .side3 {
+  background: linear-gradient(135deg, rgba(233, 120, 120, 0.5), rgba(95, 4, 4, 0.9));
+  -webkit-animation: cardRotation 12s linear 4s infinite;
+          animation: cardRotation 12s linear 4s infinite;
+}
+#skillBase .baseSkill .cardSkill .side4 {
+  background: linear-gradient(135deg, rgba(47, 255, 47, 0.5), rgba(4, 76, 4, 0.9));
+  -webkit-animation: cardRotation 12s linear 6s infinite;
+          animation: cardRotation 12s linear 6s infinite;
+}
+#skillBase .baseSkill .cardSkill .side5 {
+  background: linear-gradient(135deg, rgba(246, 149, 70, 0.5), rgba(232, 67, 7, 0.9));
+  -webkit-animation: cardRotation 12s linear 8s infinite;
+          animation: cardRotation 12s linear 8s infinite;
+}
+#skillBase .baseSkill .cardSkill .side6 {
+  background: linear-gradient(135deg, rgba(208, 70, 246, 0.5), rgba(50, 2, 65, 0.9));
+  -webkit-animation: cardRotation 12s linear 10s infinite;
+          animation: cardRotation 12s linear 10s infinite;
+}
+
+@-webkit-keyframes cardRotation {
+  0% {
+    transform: translateX(-500px) translateZ(-500px);
+    width: 300px;
+    filter: blur(2px);
+  }
+  25% {
+    transform: translateX(0px) translateZ(-1500px);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateX(500px) translateZ(-500px);
+  }
+  75% {
+    transform: translateX(0px) translateZ(100px);
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(-500px) translateZ(-500px);
+    width: 300px;
+    filter: blur(2px);
+  }
+}
+
+@keyframes cardRotation {
+  0% {
+    transform: translateX(-500px) translateZ(-500px);
+    width: 300px;
+    filter: blur(2px);
+  }
+  25% {
+    transform: translateX(0px) translateZ(-1500px);
+    filter: blur(8px);
+  }
+  50% {
+    transform: translateX(500px) translateZ(-500px);
+  }
+  75% {
+    transform: translateX(0px) translateZ(100px);
+    filter: blur(0px);
+  }
+  100% {
+    transform: translateX(-500px) translateZ(-500px);
+    width: 300px;
+    filter: blur(2px);
+  }
+}
+.burger {
+  all: unset;
+  height: 5px;
+  width: 30px;
+  background-color: #fff;
+  top: 22px;
+  left: 50px;
+  display: inline-block;
+  position: fixed;
+  cursor: pointer;
+  border-radius: 5px;
+  transform: rotate(-180deg);
+  z-index: 99;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.burger:after, .burger:before {
+  content: "";
+  height: 5px;
+  width: 30px;
+  top: 10px;
+  background: #fff;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 5px;
+  transition: all 200ms ease;
+}
+.burger:before {
+  top: -10px;
+}
+.burger:checked {
+  background-color: transparent;
+}
+.burger:checked:after {
+  transform: translate(0px, -10px) rotate(45deg);
+}
+.burger:checked:before {
+  transform: translate(0px, 10px) rotate(-45deg);
+}
+.burger:checked ~ nav {
+  display: block;
+  padding: 20px;
+  height: auto;
+}
+.burger:checked ~ nav ul {
+  display: flex;
+}
+
+nav {
+  width: 100vw;
+  height: auto;
+  background: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  height: 0px;
+  overflow: hidden;
+  transition: all 200ms ease;
+  position: fixed;
+  z-index: 9;
+  padding-block: 25px;
+}
+nav ul {
+  height: 100%;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+}
+nav ul li {
+  list-style-type: none;
+  padding-block: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+nav ul li a {
+  all: unset;
+  transition: all 200ms ease;
+  color: aliceblue;
+}
+nav ul li a:hover {
+  color: #e5a455;
+}
+
+@media screen and (min-width: 600px) {
+  .burger {
+    display: none;
+  }
+  .burger:checked ~ nav {
+    padding: 0px;
+    margin-top: 0;
+    position: static;
+  }
+  nav {
+    height: 70px;
+    overflow: hidden;
+    background-color: transparent;
+    -webkit-backdrop-filter: blur(0px);
+            backdrop-filter: blur(0px);
+    padding-block: 0px;
+    position: static;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    height: 70px;
+  }
+  nav ul li {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  nav ul li:hover {
+    color: #e5a455;
+  }
+}
+#projectBase {
+  width: 100vw;
+  max-width: 1000px;
+  min-width: 300px;
+  height: 1000px;
+  margin-block: 100px;
+  display: grid;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  grid-template: repeat(6, 1fr)/repeat(2, 1fr);
+  grid-template-areas: "txt txt" " piano ." " . blog" " pizza ." ". todo " " snake .";
+}
+@media screen and (min-width: 1000px) {
+  #projectBase {
+    height: 700px;
+    grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+    grid-template-areas: "piano txt txt blog  " " . pizza pizza  ." " . pizza pizza  . " "todo . . snake ";
+  }
+}
+#projectBase h2 {
+  grid-area: txt;
+  display: grid;
+  text-align: center;
+  font: 3rem "Kdam Thmor Pro", sans-serif;
+  color: #e5a455;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+#projectBase .project {
+  box-shadow: 0 0 5px #fff;
+  cursor: pointer;
+  transition: all 500ms;
+  display: grid;
+  place-content: center;
+  filter: grayscale(70%);
+}
+#projectBase .project:hover {
+  filter: grayscale(0%);
+  box-shadow: 0 0 15px #fff;
+}
+#projectBase .project:nth-child(1) {
+  background: center/cover url(./../image/piano.png);
+  grid-area: piano;
+}
+#projectBase .project:nth-child(2) {
+  background: center/cover url(./../image/pizza.png);
+  grid-area: pizza;
+}
+#projectBase .project:nth-child(3) {
+  background: center/cover url(./../image/blog.png);
+  grid-area: blog;
+}
+#projectBase .project:nth-child(4) {
+  background: center/cover url(./../image/todo.png);
+  grid-area: todo;
+}
+#projectBase .project:nth-child(5) {
+  background: center/cover url(./../image/snake.png);
+  grid-area: snake;
+}
+#projectBase .project a {
+  all: unset;
+  background: linear-gradient(to left, transparent, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5), transparent);
+  padding: 5px 25px;
+  font: 2rem "Kdam Thmor Pro", sans-serif;
+  color: #e5a455;
+}
+
+footer {
+  width: 100vw;
+  padding-block: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+footer span {
+  color: #ccc;
+  font-size: 1.3rem;
+}
+footer .social {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: auto;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+footer .social a {
+  all: unset;
+  height: 50px;
+  width: 50px;
+  background-color: #e5a455;
+  transition: all 500ms;
+  position: relative;
+  cursor: pointer;
+}
+footer .social a:after {
+  font: var(--fa-font-brands);
+  font-size: 2rem;
+  color: #fff;
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  transition: all 300ms;
+}
+footer .social a:nth-child(1) {
+  border-radius: 21% 79% 24% 76%/30% 30% 70% 70%;
+}
+footer .social a:nth-child(1):after {
+  content: "\f16d";
+}
+footer .social a:nth-child(2) {
+  border-radius: 71% 29% 71% 29%/41% 70% 30% 59%;
+}
+footer .social a:nth-child(2):after {
+  content: "\f16c";
+}
+footer .social a:nth-child(3) {
+  border-radius: 38% 62% 67% 33%/76% 70% 30% 24%;
+}
+footer .social a:nth-child(3):after {
+  content: "\f0e1";
+}
+footer .social a:nth-child(4) {
+  border-radius: 48% 82% 67% 73%/26% 90% 30% 54%;
+}
+footer .social a:nth-child(4):after {
+  content: "\f09b";
+}
+footer .social a:hover {
+  border-radius: 50%;
+  transform: rotate(90deg);
+}
+footer .social a:hover::after {
+  transform: rotate(-450deg);
+  color: #546846;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: #546846;
+  overflow-x: hidden;
+}
+
+main {
+  padding-block: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e5a455;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}/*# sourceMappingURL=main.css.map */

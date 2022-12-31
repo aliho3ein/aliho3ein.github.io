@@ -1,0 +1,119 @@
+header {
+  height: 90vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+
+  .headText {
+    position: relative;
+    color: $secondary-color;
+    overflow: hidden;
+    transform: rotate(90deg);
+
+    @include responsive(650) {
+      transform: rotate(0deg);
+      h1 {
+        font-size: 2rem !important;
+      }
+    }
+    @include responsive(1150) {
+      h1 {
+        font-size: 4rem !important;
+      }
+    }
+
+    > h1 {
+      padding-inline: 20px;
+      font-weight: 400;
+      font: 1.1rem $fantasy-font;
+      letter-spacing: 2px;
+      // word-spacing: 10px;
+      width: 150%;
+    }
+
+    .heLine {
+      height: 100%;
+      width: 100%;
+      font-size: 2.2rem;
+      position: absolute;
+      top: 0;
+      left: 150px;
+      background-color: $primary-color;
+      display: flex;
+      align-items: center;
+      animation: textShow 10s linear infinite;
+
+      span {
+        margin-left: -6px;
+        font-family: $fantasy-font;
+        animation: lineBlink 600ms linear infinite;
+        color: $font-color;
+      }
+    }
+  }
+
+  .fa-chevron-down {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-inline: auto;
+    text-align: center;
+    font-size: 4rem;
+    color: $font-color;
+    animation: jumpBtn 3s ease infinite reverse;
+  }
+}
+
+/* Text Effect */
+@keyframes lineBlink {
+  0% {
+    font-size: 5rem;
+  }
+  50% {
+    font-size: 3rem;
+  }
+  100% {
+    font-size: 5rem;
+  }
+}
+
+@keyframes textShow {
+  0% {
+    left: 0;
+  }
+  40% {
+    left: 100%;
+  }
+  60% {
+    left: 100%;
+  }
+  90% {
+    left: 0%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+
+/* Down Btn sign */
+@keyframes jumpBtn {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-5px);
+  }
+  20% {
+    transform: translateY(5px);
+  }
+  30% {
+    transform: translateY(-2px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+}

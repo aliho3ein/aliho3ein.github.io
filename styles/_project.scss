@@ -1,0 +1,87 @@
+#projectBase {
+  width: 100vw;
+  max-width: 1000px;
+  min-width: 300px;
+  height: 1000px;
+  margin-block: 100px;
+  display: grid;
+  user-select: none;
+  grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+  grid-template-areas:
+    "txt txt"
+    " piano ."
+    " . blog"
+    " pizza ."
+    ". todo "
+    " snake .";
+
+  @include responsive(1000) {
+    height: 700px;
+    grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+    grid-template-areas:
+      "piano txt txt blog  "
+      " . pizza pizza  ."
+      " . pizza pizza  . "
+      "todo . . snake ";
+  }
+
+  h2 {
+    grid-area: txt;
+    display: grid;
+    text-align: center;
+    font: 3rem $fantasy-font;
+    color: $secondary-color;
+    user-select: none;
+  }
+
+  .project {
+    box-shadow: 0 0 5px #fff;
+    cursor: pointer;
+    transition: all 500ms;
+    display: grid;
+    place-content: center;
+    filter: grayscale(70%);
+
+    &:hover {
+      filter: grayscale(0%);
+
+      box-shadow: 0 0 15px #fff;
+    }
+
+    &:nth-child(1) {
+      background: center / cover url(./../image/piano.png);
+      grid-area: piano;
+    }
+    &:nth-child(2) {
+      background: center / cover url(./../image/pizza.png);
+      grid-area: pizza;
+    }
+    &:nth-child(3) {
+      background: center / cover url(./../image/blog.png);
+      grid-area: blog;
+    }
+    &:nth-child(4) {
+      background: center / cover url(./../image/todo.png);
+      grid-area: todo;
+    }
+    &:nth-child(5) {
+      background: center / cover url(./../image/snake.png);
+      grid-area: snake;
+    }
+
+    a {
+      all: unset;
+      background: linear-gradient(
+        to left,
+        transparent,
+        rgb(0 0 0 /0.5),
+        rgb(0 0 0 /0.8),
+        rgb(0 0 0 /0.5),
+        transparent
+      );
+      padding: 5px 25px;
+      font: 2rem $fantasy-font;
+      color: $secondary-color;
+    }
+  }
+}

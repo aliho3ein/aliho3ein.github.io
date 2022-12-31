@@ -1,4 +1,11 @@
-# ein kurze resume
+# Portfolio
 
+The final Project für erste module
 
-[Check This](https://fbw-wd-22-d07.github.io/uib-42-glassmorphic-aliho3ein/)
+## Code enthalt
+
+- HTML
+- CSS , Sass
+- NO SCRIPT !
+
+Live Version [Link](https://aliho3ein.github.io/portfolio/)

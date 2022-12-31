@@ -1,0 +1,129 @@
+.burger {
+  all: unset;
+  height: 5px;
+  width: 30px;
+  background-color: #fff;
+  top: 22px;
+  left: 50px;
+  display: inline-block;
+  position: fixed;
+  cursor: pointer;
+  border-radius: 5px;
+  transform: rotate(-180deg);
+  z-index: 99;
+  user-select: none;
+
+  &:after,
+  &:before {
+    content: "";
+    height: 5px;
+    width: 30px;
+    top: 10px;
+    background: #fff;
+    cursor: pointer;
+    position: absolute;
+    border-radius: 5px;
+    transition: all 200ms ease;
+  }
+  &:before {
+    top: -10px;
+  }
+
+  &:checked {
+    background-color: transparent;
+
+    &:after {
+      transform: translate(0px, -10px) rotate(45deg);
+    }
+
+    &:before {
+      transform: translate(0px, 10px) rotate(-45deg);
+    }
+
+    & ~ nav {
+      display: block;
+      padding: 20px;
+      height: auto;
+      ul {
+        display: flex;
+      }
+    }
+  }
+}
+
+nav {
+  width: 100vw;
+  height: auto;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  height: 0px;
+  overflow: hidden;
+  transition: all 200ms ease;
+  position: fixed;
+  z-index: 9;
+  padding-block: 25px;
+
+  ul {
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+
+    li {
+      list-style-type: none;
+      padding-block: 10px;
+      text-align: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      a {
+        all: unset;
+        transition: all 200ms ease;
+        color: aliceblue;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+@include responsive(600) {
+  .burger {
+    display: none;
+  }
+
+  .burger:checked ~ nav {
+    padding: 0px;
+    margin-top: 0;
+    position: static;
+  }
+
+  nav {
+    height: 70px;
+    overflow: hidden;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    padding-block: 0px;
+    position: static;
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      height: 70px;
+
+      li {
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}
